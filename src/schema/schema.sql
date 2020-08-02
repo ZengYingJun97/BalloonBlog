@@ -39,8 +39,8 @@ create table t_comments (
     comment_like_count bigint(20) not null comment '点赞数',
     comment_content text not null comment '评论内容',
     parent_comment_id bigint(20) comment '父评论id',
-    comment_gmt_create datetime not null default current_timestamp comment '博文创建时间',
-    comment_gmt_modified datetime not null default current_timestamp on update current_timestamp comment '博文更新时间',
+    comment_gmt_create datetime not null default current_timestamp comment '评论创建时间',
+    comment_gmt_modified datetime not null default current_timestamp on update current_timestamp comment '评论更新时间',
     primary key (comment_id),
     foreign key (user_id) references t_user(user_id),
     foreign key (article_id) references t_articles(article_id)
@@ -51,6 +51,8 @@ create table t_labels (
     label_id bigint(20) auto_increment not null comment '标签id',
     label_name varchar(20) not null comment '标签名称',
     label_description text not null comment '标签描述',
+    label_gmt_create datetime not null default current_timestamp comment '标签创建时间',
+    label_gmt_modified datetime not null default current_timestamp on update current_timestamp comment '标签更新时间',
     primary key (label_id)
 ) engine = innodb charset = utf8 comment = '标签表';
 
@@ -58,6 +60,8 @@ create table t_labels (
 create table t_article_label (
     article_id bigint(255) not null  comment '博文id',
     label_id bigint(20) not null comment '标签id',
+    article_label_gmt_create datetime not null default current_timestamp comment '博文标签创建时间',
+    article_label_gmt_modified datetime not null default current_timestamp on update current_timestamp comment '博文标签更新时间',
     primary key (article_id, label_id),
     foreign key (article_id) references t_articles(article_id),
     foreign key (label_id) references t_labels(label_id)
