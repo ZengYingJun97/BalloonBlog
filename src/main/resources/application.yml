@@ -5,7 +5,7 @@ spring:
     active: dev
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/balloonblog
+    url: jdbc:mysql://localhost:3306/balloon_blog
     username: handsome
     password: handsome
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -172,4 +172,23 @@ public class UserEntity implements Serializable {
     public void setUserGmtModified(Long userGmtModified) {
         this.userGmtModified = userGmtModified;
     }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "userId=" + userId +
+                ", userOpenId='" + userOpenId + '\'' +
+                ", userNickname='" + userNickname + '\'' +
+                ", userSex=" + userSex +
+                ", userProvince='" + userProvince + '\'' +
+                ", userCountry='" + userCountry + '\'' +
+                ", userHeadimgurl='" + userHeadimgurl + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userEmailStatus=" + userEmailStatus +
+                ", userLastIp='" + userLastIp + '\'' +
+                ", userLastLoginTime=" + userLastLoginTime +
+                ", userGmtCreate=" + userGmtCreate +
+                ", userGmtModified=" + userGmtModified +
+                '}';
+    }
 }
