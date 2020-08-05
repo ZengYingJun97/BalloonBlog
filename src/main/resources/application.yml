@@ -30,3 +30,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+mybatis:
+  mapper-locations:
+    - classpath: mapper/*.xml
+    - classpath: com/**/mapper/*.xml
