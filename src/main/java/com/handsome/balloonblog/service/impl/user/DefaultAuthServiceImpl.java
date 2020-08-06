@@ -1,6 +1,7 @@
 package com.handsome.balloonblog.service.impl.user;
 
 import com.alibaba.fastjson.JSONObject;
+import com.handsome.balloonblog.commons.exception.ResultException;
 import com.handsome.balloonblog.service.user.AuthService;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.ByteArrayHttpMessageConverter;
@@ -42,7 +43,7 @@ public class DefaultAuthServiceImpl implements AuthService {
     }
 
     @Override
-    public String getAccessToken(String code) {
+    public String getAccessToken(String code) throws ResultException {
         return null;
     }
 
@@ -62,7 +63,7 @@ public class DefaultAuthServiceImpl implements AuthService {
     }
 
     @Override
-    public JSONObject getUserInfo(String accessToken, String openId) {
+    public JSONObject getUserInfo(String accessToken, String openId) throws ResultException {
         return null;
     }
 }

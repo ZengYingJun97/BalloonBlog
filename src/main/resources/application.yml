@@ -32,5 +32,12 @@ spring:
       ddl-auto: update
 mybatis:
   mapper-locations:
-    - classpath: mapper/*.xml
-    - classpath: com/**/mapper/*.xml
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+
+oauth:
+  wx:
+    appid: wxe24a6385bccd84f6
+    appsecret: e1e7d634e3e8f9ac9c5a718e7e970e60
+  callback:
+    http: /user/login/callback

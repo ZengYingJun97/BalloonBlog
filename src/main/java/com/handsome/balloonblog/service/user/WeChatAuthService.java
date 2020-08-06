@@ -1,6 +1,7 @@
 package com.handsome.balloonblog.service.user;
 
 import com.alibaba.fastjson.JSONObject;
+import com.handsome.balloonblog.commons.exception.ResultException;
 
 /**
  * @program: balloonblog
@@ -10,5 +11,5 @@ import com.alibaba.fastjson.JSONObject;
  **/
 public interface WeChatAuthService {
 
-    public JSONObject getUserInfo(String accessToken, String openId);
+    public abstract JSONObject getUserInfo(String accessToken, String openId) throws ResultException;
 }
