@@ -40,15 +40,15 @@ public class WeChatAuthServiceImpl extends DefaultAuthServiceImpl implements WeC
             "https://api.weixin.qq.com/sns/userinfo?access_token=%s&openid=%s&lang=zh_CN";
 
     @Value("${oauth.wx.appid}")
-    private static String APP_ID;
+    private String APP_ID;
 
     @Value("${oauth.wx.appsecret}")
-    private static String APP_SECRET = "e1e7d634e3e8f9ac9c5a718e7e970e60";
+    private String APP_SECRET;
 
     private static final String SCOPE = "snsapi_userinfo";
 
     @Value("${oauth.callback.http}")
-    private static String callbackUrl;
+    private String callbackUrl;
 
     @Override
     public String getAccessToken(String code) throws ResultException {
