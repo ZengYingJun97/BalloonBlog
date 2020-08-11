@@ -123,19 +123,20 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.handsome.balloonblog.mbg.model.TLabels">
-    insert into t_labels (label_id, label_name, label_gmt_create, 
-      label_gmt_modified, label_description
-      )
-    values (#{labelId,jdbcType=BIGINT}, #{labelName,jdbcType=VARCHAR}, #{labelGmtCreate,jdbcType=TIMESTAMP}, 
-      #{labelGmtModified,jdbcType=TIMESTAMP}, #{labelDescription,jdbcType=LONGVARCHAR}
-      )
+    <selectKey keyProperty="labelId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_labels (label_name, label_gmt_create, label_gmt_modified, 
+      label_description)
+    values (#{labelName,jdbcType=VARCHAR}, #{labelGmtCreate,jdbcType=TIMESTAMP}, #{labelGmtModified,jdbcType=TIMESTAMP}, 
+      #{labelDescription,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.handsome.balloonblog.mbg.model.TLabels">
+    <selectKey keyProperty="labelId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into t_labels
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="labelId != null">
-        label_id,
-      </if>
       <if test="labelName != null">
         label_name,
       </if>
@@ -150,9 +151,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="labelId != null">
-        #{labelId,jdbcType=BIGINT},
-      </if>
       <if test="labelName != null">
         #{labelName,jdbcType=VARCHAR},
       </if>

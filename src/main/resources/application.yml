@@ -59,7 +59,9 @@ mybatis:
 
 oauth:
   wx:
-    appid: xxxx
-    appsecret: xxxx
+    appid: xxx
+    appsecret: xxx
   callback:
-    http: /user/login/callback
+    http: http://271df68d.cpolar.io/api/user/login/wechat/callback
+jwt:
+  secret: hadWR!@Rajldhlar@#addkj
