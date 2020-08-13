@@ -51,5 +51,21 @@
             <generatedKey column="article_id" sqlStatement="MySql" identity="true"/>
         </table>
         <table tableName="t_article_label"></table>
+        <table tableName="t_admin">
+            <generatedKey column="admin_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_role">
+            <generatedKey column="role_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_permission">
+            <generatedKey column="permission_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_admin_role_relation">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="t_role_permission_relation">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
     </context>
 </generatorConfiguration>

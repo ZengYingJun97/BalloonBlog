@@ -64,4 +64,7 @@ oauth:
   callback:
     http: http://271df68d.cpolar.io/api/user/login/wechat/callback
 jwt:
+  tokenHeader: Authorization
   secret: hadWR!@Rajldhlar@#addkj
+  expiration: 604800
+  tokenHead: 'Bearer'

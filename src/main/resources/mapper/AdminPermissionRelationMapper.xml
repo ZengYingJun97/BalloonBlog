@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.handsome.balloonblog.dao.AdminPermissionRelationDao">
+
+    <select id="getPermissionList" resultMap="com.handsome.balloonblog.mbg.mapper.TPermissionMapper.BaseResultMap">
+        select
+            p.*
+        from
+            t_admin_role_relation ar
+            left join t_role r on ar.role_id = r.role_id
+            left join t_role_permission_relation rp on rp.role_id = r.role_id
+            left join t_permission p on p.permission_id = rp.permission_id
+        where
+            ar.admin_id = #{adminId}
+            and p.permission_id is not null
+    </select>
+</mapper>

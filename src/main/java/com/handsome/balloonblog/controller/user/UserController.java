@@ -1,4 +1,4 @@
-package com.handsome.balloonblog.controller;
+package com.handsome.balloonblog.controller.user;
 
 import com.alibaba.fastjson.JSONObject;
 import com.handsome.balloonblog.commons.constant.RedisPreName;
@@ -8,17 +8,14 @@ import com.handsome.balloonblog.commons.result.Result;
 import com.handsome.balloonblog.commons.utils.HttpUtils;
 import com.handsome.balloonblog.dto.UserDto;
 import com.handsome.balloonblog.mbg.model.TUser;
-import com.handsome.balloonblog.mbg.model.TUserExample;
 import com.handsome.balloonblog.service.RedisService;
 import com.handsome.balloonblog.service.user.AuthService;
 import com.handsome.balloonblog.service.user.UserService;
-import com.handsome.balloonblog.service.user.WeChatAuthService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
